@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/18 11:18:43 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:42:13 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+
+//send_char envía los bits en orden descendente (de 7 a 0).
+//send_char usa un bucle while que decrementa bit desde 7 hasta 0.
 
 void send_char(int pid, char c)
 {
