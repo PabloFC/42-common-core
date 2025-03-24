@@ -6,34 +6,32 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 11:04:59 by pafuente          #+#    #+#              #
-#    Updated: 2025/03/14 13:01:52 by pafuente         ###   ########.fr        #
+#    Updated: 2025/03/24 11:25:08 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-NAME = pipex
-# SRCS = pipex.c\
-# utils.c\
-# error_handling.c\
+CLIENT_SRC = client.c
+SERVER_SRC = server.c
+CLIENT_NAME = client
+SERVER_NAME = server
 
+all: $(CLIENT_NAME) $(SERVER_NAME)
 
+$(CLIENT_NAME): $(CLIENT_SRC)
+$(CC) $(CFLAGS) -o $@ $(CLIENT_SRC)
 
-OBJS = $(SRCS:.c=.o)
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-    $(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(SERVER_NAME): $(SERVER_SRC)
+$(CC) $(CFLAGS) -o $@ $(SERVER_SRC)
 
 clean:
-	rm -rf $(OBJS) 
+	rm -rf $(CLIENT_NAME) $(SERVER_NAME)
 
 fclean: clean
-	rm -rf $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+

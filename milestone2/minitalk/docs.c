@@ -91,3 +91,66 @@
 // Es importante tener en cuenta la seguridad de los manejadores de señales, evitando funciones no seguras dentro de estos.
 // Bloquear señales es útil para evitar interrupciones durante operaciones críticas.
 // Este artículo es útil para entender cómo trabajar con señales en C y cómo tener control sobre la ejecución de los programas mediante la interceptación y personalización de las señales recibidas.
+
+
+
+///////// MAKEFILE WITH LIBFT //////////
+
+
+// # CC = cc
+// # CFLAGS = -Wall -Wextra -Werror
+// # CLIENT_SRCS = client.c
+// # SERVER_SRCS = server.c
+// # LIBFT_PATH = libft
+// # LIBFT_ARCHIVE = $(LIBFT_PATH)/libft.a
+// # CLIENT_NAME = client
+// # SERVER_NAME = server
+
+// # all: $(CLIENT_NAME) $(SERVER_NAME)
+
+// # $(CLIENT_NAME): $(CLIENT_SRCS) $(LIBFT_ARCHIVE)
+// # 	$(CC) $(CFLAGS) -o $@ $(CLIENT_SRCS) -L$(LIBFT_PATH) -lft
+
+// # $(SERVER_NAME): $(SERVER_SRCS) $(LIBFT_ARCHIVE)
+// # 	$(CC) $(CFLAGS) -o $@ $(SERVER_SRCS) -L$(LIBFT_PATH) -lft
+
+// # $(LIBFT_ARCHIVE):
+// # 	$(MAKE) -C $(LIBFT_PATH)
+
+// # clean:
+// # 	$(MAKE) -C $(LIBFT_PATH) clean
+
+// # fclean: clean
+// # 	$(MAKE) -C $(LIBFT_PATH) fclean
+// # 	rm -f $(CLIENT_NAME) $(SERVER_NAME)
+
+// # re: fclean all
+
+// # .PHONY: all clean fclean re
+
+
+///////// MAKEFILE WITHOUT LIBFT //////////
+
+// CC = cc
+// CFLAGS = -Wall -Wextra -Werror
+// CLIENT_SRCS = client.c
+// SERVER_SRCS = server.c
+// CLIENT_NAME = client
+// SERVER_NAME = server
+
+// all: $(CLIENT_NAME) $(SERVER_NAME)
+
+// $(CLIENT_NAME): $(CLIENT_SRCS)
+// 	$(CC) $(CFLAGS) -o $@ $(CLIENT_SRCS)
+
+// $(SERVER_NAME): $(SERVER_SRCS)
+// 	$(CC) $(CFLAGS) -o $@ $(SERVER_SRCS)
+
+// clean:
+// 	rm -f $(CLIENT_NAME) $(SERVER_NAME)
+
+// fclean: clean
+
+// re: fclean all
+
+// .PHONY: all clean fclean re
