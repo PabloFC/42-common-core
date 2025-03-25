@@ -6,10 +6,9 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 11:04:59 by pafuente          #+#    #+#              #
-#    Updated: 2025/03/24 11:25:08 by pafuente         ###   ########.fr        #
+#    Updated: 2025/03/24 11:44:12 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

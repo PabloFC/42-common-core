@@ -6,14 +6,11 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/18 11:42:13 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/25 11:23:42 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "minitalk.h"
 
 
 //send_char envía los bits en orden descendente (de 7 a 0).
