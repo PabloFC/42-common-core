@@ -6,31 +6,41 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/14 11:04:59 by pafuente          #+#    #+#              #
-#    Updated: 2025/03/24 11:44:12 by pafuente         ###   ########.fr        #
+#    Updated: 2025/03/25 13:32:22 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME_SERVER = server
+NAME_CLIENT = client
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-CLIENT_SRC = client.c
-SERVER_SRC = server.c
-CLIENT_NAME = client
-SERVER_NAME = server
 
-all: $(CLIENT_NAME) $(SERVER_NAME)
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+INCLUDES = -I$(LIBFT_DIR)
 
-$(CLIENT_NAME): $(CLIENT_SRC)
-$(CC) $(CFLAGS) -o $@ $(CLIENT_SRC)
+SRCS_SERVER = ./server.c
+SRCS_CLIENT = ./client.c
 
-$(SERVER_NAME): $(SERVER_SRC)
-$(CC) $(CFLAGS) -o $@ $(SERVER_SRC)
+all: $(LIBFT) $(NAME_SERVER) $(NAME_CLIENT)
+
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
+
+$(NAME_SERVER): $(SRCS_SERVER) $(LIBFT)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_SERVER) $(SRCS_SERVER) $(LIBFT)
+
+$(NAME_CLIENT): $(SRCS_CLIENT) $(LIBFT)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(NAME_CLIENT) $(SRCS_CLIENT) $(LIBFT)
 
 clean:
-	rm -rf $(CLIENT_NAME) $(SERVER_NAME)
+	@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
+	rm -f $(NAME_SERVER) $(NAME_CLIENT)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
 .PHONY: all clean fclean re
-

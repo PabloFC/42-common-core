@@ -6,12 +6,16 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:37:00 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/25 11:23:54 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/25 13:09:33 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "minitalk.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <signal.h>
+// # include <sys/types.h>
+# include "libft/libft.h"
 
 #define END_TRANSMISSION '\0'
 

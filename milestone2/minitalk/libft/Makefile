@@ -6,7 +6,7 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/13 12:53:10 by pafuente          #+#    #+#              #
-#    Updated: 2025/03/25 10:24:37 by pafuente         ###   ########.fr        #
+#    Updated: 2025/03/25 13:36:14 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,15 +47,11 @@ ft_striteri.c\
 ft_strmapi.c\
 ft_itoa.c\
 ft_split.c\
+ft_printf.c\
 ft_print_hex.c\
 ft_printf_functions.c\
 ft_printf_pointers.c\
 ft_printf_unsigned.c\
-ft_printf_.c\
-
-
-
-
 
 OBJS = $(SRCS:.c=.o)
 
