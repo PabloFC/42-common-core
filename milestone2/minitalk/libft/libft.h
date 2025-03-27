@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:06:21 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/25 10:50:29 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:46:04 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
-
 
 //LIBFT FUNCTIONS//
 int		ft_isalpha(int c);
@@ -60,14 +59,13 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 //printf
-
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int character);
-int	ft_printf_format(va_list args, const char format);
-int	ft_putstr(char *str);
-int	ft_putnum(int n);
-int	ft_putpointer(unsigned long long ptr);
-int	ft_unsigned(unsigned int n);
-int	ft_puthexa(unsigned int num, const char type);
+int		ft_printf(const char *format, ...);
+int		ft_putchar(int character);
+int		ft_printf_format(va_list args, const char format);
+int		ft_putstr(char *str);
+int		ft_putnum(int n);
+int		ft_putpointer(unsigned long long ptr);
+int		ft_unsigned(unsigned int n);
+int		ft_puthexa(unsigned int num, const char type);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:08:25 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/25 10:48:55 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/27 12:42:45 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,3 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (len);
 }
-
