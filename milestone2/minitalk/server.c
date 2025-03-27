@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:37:00 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/25 13:09:33 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/27 11:06:42 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,48 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <signal.h>
-// # include <sys/types.h>
 # include "libft/libft.h"
 
 #define END_TRANSMISSION '\0'
 
 
-void	handle_signal(int signal)
+#include <unistd.h>
+#include <stdlib.h>
+#include <signal.h>
+#include "libft/libft.h"
+
+// The signal_handler function reconstructs characters from binary signals
+//  SIGUSR1 and SIGUSR2). Each signal represents a bit (1 or 0).
+// When 8 bits have been received, they are interpreted as an ASCII character and printed.
+// If the character is null ('\0'), a line break is printed to indicate the end of the message.
+
+void	signal_handler(int sig)
 {
-	static unsigned char	current_char;
-	static int				bit_index;
+    static unsigned char	character = 0;
+    static int				bit_pos = 0;
 
-	current_char |= (signal == SIGUSR1);
-	bit_index++;
-	if (bit_index == 8)
-	{
-		if (current_char == END_TRANSMISSION)
-			ft_printf("\n");
-		else
-			ft_printf("%c", current_char);
-		bit_index = 0;
-		current_char = 0;
-	}
-	else
-		current_char <<= 1;
+    character |= (sig == SIGUSR1);
+    bit_pos++;
+    if (bit_pos == 8)
+    {
+        if (character == '\0') 
+            ft_printf("\n");
+        else
+            ft_printf("%c", character); 
+        bit_pos = 0;
+        character = 0;
+    }
+    else
+        character <<= 1; 
 }
-
-
 int	main(void)
 {
-	printf("%d\n", getpid());
-	signal(SIGUSR1, handle_signal);
-	signal(SIGUSR2, handle_signal);
-	while (1)
-		pause();
-	return (0);
+    ft_printf("Server PID: %d\n", getpid());
+
+    signal(SIGUSR1, signal_handler);
+    signal(SIGUSR2, signal_handler);
+
+    while (1)
+        pause();
+    return (0);
 }

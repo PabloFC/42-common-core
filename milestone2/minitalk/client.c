@@ -6,14 +6,13 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/26 11:29:19 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/26 12:25:40 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
-// # include <sys/types.h>
 #include "libft/libft.h"
 
 void	send_signal(int pid, unsigned char character)
