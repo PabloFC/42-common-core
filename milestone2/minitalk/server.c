@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 10:37:00 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/28 12:02:51 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/28 13:07:20 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,8 @@ void	signal_handler(int sig)
 	static unsigned char	character = 0;
 	static int				bit_pos = 0;
 
-	if (sig == SIGUSR1)
-		character |= 1; // Añade un '1' al bit menos significativo de 'character'
-	else
-		character |= 0; // Añade un '0' al bit menos significativo de 'character'
-	bit_pos++; // Asegura que el programa sepa cuántos bits se han acumulado en la variable character. Cuando bit_pos llega a 8, significa que se ha recibido un byte completo (8 bits), y ese byte se interpreta como un carácter ASCII.
+	character |= (sig == SIGUSR1);
+	bit_pos++;
 	if (bit_pos == 8)
 	{
 		if (character == '\0')
@@ -43,7 +40,7 @@ void	signal_handler(int sig)
 		character = 0;
 	}
 	else
-		character <<= 1; // Esta operación se utiliza para preparar character para recibir el siguiente bit
+		character <<= 1;
 }
 
 int	main(void)

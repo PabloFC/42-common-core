@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/27 13:09:10 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/03/28 12:45:31 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	transmit_signal(int target_pid, unsigned char byte)
 			kill(target_pid, SIGUSR2);
 		else
 			kill(target_pid, SIGUSR1);
-		usleep(50);
+		usleep(100);
 	}
 }
 
