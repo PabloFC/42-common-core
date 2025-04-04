@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 13:06:21 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/27 12:46:04 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/02 10:53:12 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <signal.h>
+
 
 //LIBFT FUNCTIONS//
 int		ft_isalpha(int c);

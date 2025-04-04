@@ -6,53 +6,49 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/03/28 12:45:31 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/02 11:40:52 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <signal.h>
 #include "libft/libft.h"
 
-//The function converts a byte into a sequence of signals 
-//(SIGUSR1 and SIGUSR2) that represent the bits of the byte.
-//Inter-process communication is used to send messages character by character.
-
-void	transmit_signal(int target_pid, unsigned char byte)
+void	ft_send_bits(int pid, char i)
 {
-	int				bit_index;
-	unsigned char	current_bit;
+	int	bit;
 
-	bit_index = 8;
-	while (bit_index > 0)
+	bit = 0;
+	while (bit < 8)
 	{
-		bit_index--;
-		current_bit = byte >> bit_index;
-		if (current_bit == 0)
-			kill(target_pid, SIGUSR2);
+		if ((i & (0x01 << bit)) != 0)
+			kill(pid, SIGUSR1);
 		else
-			kill(target_pid, SIGUSR1);
+			kill(pid, SIGUSR2);
 		usleep(100);
+		bit++;
 	}
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
-	int			server_pid;
-	const char	*message;
-	int			i;
+	int	pid;
+	int	i;
 
-	if (argc != 3)
-	{
-		ft_printf("Usage: %s <pid> <message>\n", argv[0]);
-		exit(0);
-	}
-	server_pid = ft_atoi(argv[1]);
-	message = argv[2];
 	i = 0;
-	while (message[i])
-		send_signal(server_pid, message[i++]);
-	send_signal(server_pid, '\0');
+	if (argc == 3)
+	{
+		pid = ft_atoi(argv[1]);
+		while (argv[2][i] != '\0')
+		{
+			ft_send_bits(pid, argv[2][i]);
+			i++;
+		}
+		ft_send_bits(pid, '\n');
+	}
+	else
+	{
+		write(2, "Error: wrong format.\n", 21);
+		write(2, "Try: ./client <PID> <MESSAGE>\n", 30);
+		return (1);
+	}
 	return (0);
 }

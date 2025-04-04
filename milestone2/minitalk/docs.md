@@ -41,7 +41,7 @@
 //https://www.codequoi.com/en/sending-and-intercepting-a-signal-in-c/
 //https://github.com/STC71/42_malaga/blob/main/minitalk/server.c
 // https://github.com/Surfi89/minitalk/tree/main/src
-//https://github.com/leogaudin/minitalk
+
 
 
 
