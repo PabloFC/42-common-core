@@ -6,13 +6,17 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 10:26:14 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/02 11:40:52 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/08 10:47:02 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 
-void	ft_send_bits(int pid, char i)
+//The function `ft_send_char_as_signals` sends 
+//the bits of a character as signals to the process 
+//specified by the `pid`.
+
+void	ft_send_char_as_signals(int pid, char i)
 {
 	int	bit;
 
@@ -39,10 +43,10 @@ int	main(int argc, char **argv)
 		pid = ft_atoi(argv[1]);
 		while (argv[2][i] != '\0')
 		{
-			ft_send_bits(pid, argv[2][i]);
+			ft_send_char_as_signals(pid, argv[2][i]);
 			i++;
 		}
-		ft_send_bits(pid, '\n');
+		ft_send_char_as_signals(pid, '\n');
 	}
 	else
 	{
