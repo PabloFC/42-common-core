@@ -39,7 +39,7 @@
 <!-- Orden de Implementación (Pasos Clave)
 Estructuras Básicas:
 
-Define t_stack_node en push_swap.h.
+Define t_stack_node en push_swap.h. Ok
 
 Implementa stack_new() y stack_add_back() (en stack_utils.c).
 
