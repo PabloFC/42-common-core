@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/17 13:40:40 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/21 11:04:35 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 # include <limits.h>
 
 // Estructura para los nodos de la pila
-typedef struct s_stack
+typedef struct s_stack_node
 {
-    int             value;         
-    int             index;          
-    struct s_stack  *next;          
-}                   t_stack;
+    int value;
+    int index;
+    struct s_stack_node *next;
+    struct s_stack_node *prev;
+} t_stack_node;
 
 #endif
