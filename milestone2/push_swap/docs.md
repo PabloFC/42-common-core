@@ -5,9 +5,10 @@
 - [Push Swap in Less Than 4200 Operations](https://medium.com/@ulysse.gerkens/push-swap-in-less-than-4200-operations-c292f034f6c0)
 
 ## YouTube Videos
+- [Radix Sort Explained by ChioCode](https://www.youtube.com/watch?v=W_euZjKoHkM&ab_channel=ChioCode)
 - [Push Swap Explained by Oceano](https://www.youtube.com/watch?app=desktop&v=OaG81sDEpVk&ab_channel=Oceano)
-- [Push Swap Explained by ChioCode](https://www.youtube.com/watch?v=W_euZjKoHkM&ab_channel=ChioCode)
 - [Push Swap in Short Format](https://www.youtube.com/shorts/4hJAqspcubU)
+- [Push Swap Visualization by John Park](https://www.youtube.com/watch?v=7KW59UO55TQ&ab_channel=JOHNPARK)
 
 
 <!-- GESTION DEL PROYECTO -->

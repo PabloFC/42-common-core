@@ -60,6 +60,8 @@
     "libft.h": "c",
     "ft_printf.h": "c",
     "unistd.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "push_swap.h": "c",
+    "type_traits": "c"
   }
 }

@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:45:24 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/22 11:09:44 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/22 13:37:59 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,23 @@ void sort_three(t_stack_node **a)
 {
     int first_pos = (*a)->value;
     int middle_pos = (*a)->next->value;
-    int last_pos = (*a)->next->next->value;
+    int last_position = (*a)->next->next->value;
 
-    if (first_pos > middle_pos && middle_pos < last_pos && last_pos > first_pos)
+    if (first_pos > middle_pos && middle_pos < last_position && last_position > first_pos)
         sa(a, true);
-    else if (first_pos > middle_pos && middle_pos > last_pos)
+    else if (first_pos > middle_pos && middle_pos > last_position)
     {
         sa(a, true);
         rra(a, true);
     }
-    else if (first_pos > middle_pos && middle_pos < last_pos && last_pos < first_pos)
+    else if (first_pos > middle_pos && middle_pos < last_position && last_position < first_pos)
         ra(a, true);
-    else if (first_pos < middle_pos && middle_pos > last_pos && last_pos > first_pos)
+    else if (first_pos < middle_pos && middle_pos > last_position && last_position > first_pos)
     {
         sa(a, true);
         ra(a, true);
     }
-    else if (first_pos < middle_pos && middle_pos > last_pos && last_pos < first_pos)
+    else if (first_pos < middle_pos && middle_pos > last_position && last_position < first_pos)
         rra(a, true);
 }
 
