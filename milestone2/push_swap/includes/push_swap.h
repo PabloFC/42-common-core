@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/23 10:14:39 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/23 10:50:30 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_stack_node
     struct s_stack_node *prev;
 } t_stack_node;
 
-/* ------------------- Operaciones ------------------- */
+/* ------------------- Operations ------------------- */
 /* Swap */
 void sa(t_stack_node **a, bool print);
 void sb(t_stack_node **b, bool print);
@@ -73,7 +73,7 @@ void exit_with_error(void);
 /* Output */
 int ft_printf(const char *format, ...);
 
-/* ------------------- Algoritmos ------------------- */
+/* ------------------- Algorithms ------------------- */
 void sort_two(t_stack_node **a);
 void sort_three(t_stack_node **a);
 void sort_four_five(t_stack_node **a, t_stack_node **b);
