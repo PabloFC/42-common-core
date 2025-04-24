@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:16:02 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/23 10:16:14 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/24 13:18:58 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,16 @@ static void check_duplicates(t_stack_node *stack)
     }
 }
 
-static void assign_indexes(t_stack_node *stack)
-{
-    t_stack_node *tmp;
-    t_stack_node *compare;
-    int index;
-
-    tmp = stack;
-    while (tmp)
-    {
-        compare = stack;
-        index = 0;
-        while (compare)
-        {
-            if (compare->value < tmp->value)
-                index++;
+void assign_indexes(t_stack_node *stack) {
+    t_stack_node *tmp = stack;
+    while (tmp) {
+        int index = 0;
+        t_stack_node *compare = stack;
+        while (compare) {
+            if (compare->value < tmp->value) index++;
             compare = compare->next;
         }
-        tmp->index = index;
+        tmp->index = index;  
         tmp = tmp->next;
     }
 }
