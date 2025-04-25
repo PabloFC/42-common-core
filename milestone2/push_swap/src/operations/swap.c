@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:58:20 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/21 13:41:53 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:59:57 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void sa(t_stack_node **a, bool print)
     first->prev = second;
     *a = second;
     if (print)
-        ft_printf("sa\n");
+        write(1, "sa\n", 3);
+        
 }
 
 void sb(t_stack_node **b, bool print)
@@ -57,5 +58,5 @@ void ss(t_stack_node **a, t_stack_node **b, bool print)
     sa(a, false);
     sb(b, false);
     if (print)
-        ft_printf("ss\n");
+        write(1, "ss\n", 3);
 }
