@@ -6,14 +6,16 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:23:52 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/25 11:13:56 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 13:11:31 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	ft_strncpy(char *dst, const char *src, int n) {
-    while (n-- && (*dst++ = *src++));
+    while (n-- && *src)
+        *dst++ = *src++;
+    *dst = '\0';
 }
 
 bool is_sorted(t_stack_node *stack)

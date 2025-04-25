@@ -6,12 +6,32 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:22:44 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/22 13:17:44 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 13:15:26 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
+
+int find_max_index_pos(t_stack_node **stack)
+{
+    t_stack_node *tmp = *stack;
+    int max_index = tmp->index;
+    int max_pos = 0;
+    int current_pos = 0;
+
+    while (tmp)
+    {
+        if (tmp->index > max_index)
+        {
+            max_index = tmp->index;
+            max_pos = current_pos;
+        }
+        tmp = tmp->next;
+        current_pos++;
+    }
+    return max_pos;
+}
 
 int find_min_index_pos(t_stack_node **stack)
 {

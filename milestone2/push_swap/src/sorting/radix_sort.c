@@ -6,32 +6,51 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 10:55:51 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/24 13:18:48 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 13:46:51 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
 #include "push_swap.h"
 
-void radix_sort(t_stack_node **stack_a, t_stack_node **stack_b) {
-    int max_index = get_max_index(*stack_a);
-    int max_bits = 0;
-    int bit = 0;
-    int size;
-    
-    while ((max_index >> max_bits) != 0)
-        max_bits++;
+static int	get_max_bits(t_stack_node *stack)
+{
+	int	max;
+	int	bits;
 
-    while (bit < max_bits) {
-        size = stack_size(*stack_a);
-        while (size-- > 0) {
-            if (((*stack_a)->index >> bit) & 1)
-                ra(stack_a, true);
-            else
-                pb(stack_a, stack_b, true);
-        }
-        while (*stack_b)
-            pa(stack_a, stack_b, true);
-        bit++;
-    }
+	max = get_max_index(stack);
+	bits = 0;
+	while ((max >> bits) != 0)
+		bits++;
+	return (bits);
+}
+
+void	radix_sort(t_stack_node **a, t_stack_node **b)
+{
+	int	i;
+	int	j;
+	int	size;
+	int	bit;
+	t_stack_node *node;
+
+	size = stack_size(*a);
+	bit = get_max_bits(*a);
+	i = 0;
+	while (i < bit)
+	{
+		j = 0;
+		while (j < size)
+		{
+			node = *a;
+			if (((node->index >> i) & 1) == 1)
+				ra(a, true);
+			else
+				pb(a, b, true);
+			j++;
+		}
+		while (*b)
+			pa(a, b, true);
+		i++;
+	}
 }

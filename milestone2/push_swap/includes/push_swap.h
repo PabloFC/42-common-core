@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/25 09:47:18 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 13:15:57 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void rrr(t_stack_node **a, t_stack_node **b, bool print);
 t_stack_node *parse_args(int argc, char **argv);
 
 /* ------------------- Sort Utils ------------------- */
+int find_max_index_pos(t_stack_node **stack);
 int find_min_index_pos(t_stack_node **stack);
 void move_to_top(t_stack_node **stack, int pos, bool is_stack_a);
 int get_max_index(t_stack_node *stack);
