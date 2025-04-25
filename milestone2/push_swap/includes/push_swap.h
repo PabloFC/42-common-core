@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/24 13:19:03 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/25 09:47:18 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack_node
     struct s_stack_node *prev;
 } t_stack_node;
 
-/* ------------------- Operaciones ------------------- */
+/* ------------------- Operations ------------------- */
 /* Swap */
 void sa(t_stack_node **a, bool print);
 void sb(t_stack_node **b, bool print);
