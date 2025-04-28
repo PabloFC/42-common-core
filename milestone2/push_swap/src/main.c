@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:01:39 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/23 10:42:12 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/28 10:17:37 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     else if (size <= 5)
         sort_four_five(&a, &b);
     else
-        radix_sort(&a, &b);
+        chunk_sort(&a, &b);
 
     free_stack(&a);
     return 0;

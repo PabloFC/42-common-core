@@ -6,7 +6,7 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 12:28:17 by pafuente          #+#    #+#              #
-#    Updated: 2025/04/23 11:22:19 by pafuente         ###   ########.fr        #
+#    Updated: 2025/04/28 10:18:23 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS = src/main.c \
        src/parsing/parse_args.c \
        src/utils/stack_utils.c \
        src/sorting/small_sort.c \
-       src/sorting/radix_sort.c \
+       src/sorting/chunk_sort.c \
        src/sorting/sort_utils.c \
        src/operations/push.c \
        src/operations/swap.c \
