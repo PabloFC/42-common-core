@@ -6,7 +6,7 @@
 #    By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/14 12:28:17 by pafuente          #+#    #+#              #
-#    Updated: 2025/04/28 10:18:23 by pafuente         ###   ########.fr        #
+#    Updated: 2025/04/30 11:37:23 by pafuente         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ NAME = push_swap
 SRCS = src/main.c \
        src/parsing/parse_args.c \
        src/utils/stack_utils.c \
-       src/sorting/small_sort.c \
+       src/sorting/sort_two_three.c \
+       src/sorting/sort_three_cases.c \
+       src/sorting/sort_four_five.c \
        src/sorting/chunk_sort.c \
        src/sorting/sort_utils.c \
        src/operations/push.c \

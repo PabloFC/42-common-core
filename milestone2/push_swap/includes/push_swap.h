@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/28 11:28:26 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/04/30 11:43:07 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,18 @@ void				exit_with_error(void);
 /* Output */
 int					ft_printf(const char *format, ...);
 
-/* ------------------- Algoritmos ------------------- */
+/* ------------------- Algorithms ------------------- */
 void				sort_two(t_stack_node **a);
 void				sort_three(t_stack_node **a);
 void				sort_four_five(t_stack_node **a, t_stack_node **b);
 void				chunk_sort(t_stack_node **a, t_stack_node **b);
+
+/* ------------------- Cases ------------------- */
+
+void				case_one(t_stack_node **a);
+void				case_two(t_stack_node **a);
+void				case_three(t_stack_node **a);
+void				case_four(t_stack_node **a);
+void				case_five(t_stack_node **a);
 
 #endif
