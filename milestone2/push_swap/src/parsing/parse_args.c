@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:16:02 by pafuente          #+#    #+#             */
-/*   Updated: 2025/05/05 11:38:19 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:38:51 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,21 +78,13 @@ void	assign_indexes(t_stack_node *stack)
 
 // Parses command-line arguments into a stack, validates them,
 // checks for duplicates, assigns indexes, and returns the stack.
-t_stack_node	*parse_args(int argc, char **argv)
+
+static void	fill_stack(t_stack_node **stack, char **args)
 {
-	t_stack_node	*stack_a = NULL;
-	long			num;
-	char			**args;
-	int				i = 0;
+	long	num;
+	int		i;
 
-	if (argc < 2)
-		exit(0);
-
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-		args = &argv[1];
-
+	i = 0;
 	while (args[i])
 	{
 		if (!is_valid_number(args[i]))
@@ -100,14 +92,26 @@ t_stack_node	*parse_args(int argc, char **argv)
 		num = ft_atol(args[i]);
 		if (num > INT_MAX || num < INT_MIN)
 			exit_with_error();
-		stack_add_back(&stack_a, stack_new((int)num));
+		stack_add_back(stack, stack_new((int)num));
 		i++;
 	}
+}
 
-	// Solo liberar si usaste ft_split
+t_stack_node	*parse_args(int argc, char **argv)
+{
+	t_stack_node	*stack_a;
+	char			**args;
+
+	stack_a = NULL;
+	if (argc < 2)
+		exit(0);
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+		args = &argv[1];
+	fill_stack(&stack_a, args);
 	if (argc == 2)
 		free_split(args);
-
 	check_duplicates(stack_a);
 	assign_indexes(stack_a);
 	return (stack_a);
