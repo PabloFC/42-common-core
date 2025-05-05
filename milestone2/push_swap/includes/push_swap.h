@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:15:08 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/30 11:43:07 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:37:32 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ bool				is_sorted(t_stack_node *stack);
 void				free_stack(t_stack_node **stack);
 t_stack_node		*stack_new(int value);
 void				stack_add_back(t_stack_node **stack, t_stack_node *new);
+char				**ft_split(const char *s, char c);
+void				free_split(char **split);
+
 
 /* Validation */
 int					ft_isdigit(int c);

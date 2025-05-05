@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:16:02 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/29 13:51:28 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:38:19 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,25 +80,34 @@ void	assign_indexes(t_stack_node *stack)
 // checks for duplicates, assigns indexes, and returns the stack.
 t_stack_node	*parse_args(int argc, char **argv)
 {
-	t_stack_node	*stack_a;
+	t_stack_node	*stack_a = NULL;
 	long			num;
-	int				i;
+	char			**args;
+	int				i = 0;
 
-	stack_a = NULL;
-	i = 1;
-	while (i < argc)
+	if (argc < 2)
+		exit(0);
+
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+		args = &argv[1];
+
+	while (args[i])
 	{
-		if (!is_valid_number(argv[i]))
+		if (!is_valid_number(args[i]))
 			exit_with_error();
-		num = ft_atol(argv[i]);
+		num = ft_atol(args[i]);
 		if (num > INT_MAX || num < INT_MIN)
 			exit_with_error();
-		if (i == 1)
-			stack_a = stack_new((int)num);
-		else
-			stack_add_back(&stack_a, stack_new((int)num));
+		stack_add_back(&stack_a, stack_new((int)num));
 		i++;
 	}
+
+	// Solo liberar si usaste ft_split
+	if (argc == 2)
+		free_split(args);
+
 	check_duplicates(stack_a);
 	assign_indexes(stack_a);
 	return (stack_a);

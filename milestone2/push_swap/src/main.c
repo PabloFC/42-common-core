@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 14:01:39 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/28 10:17:37 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:12:29 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-    t_stack_node *a;
+    t_stack_node *a ;
     t_stack_node *b = NULL;
     int size;
 
