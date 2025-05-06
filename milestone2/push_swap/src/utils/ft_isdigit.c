@@ -6,13 +6,13 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:21:45 by pafuente          #+#    #+#             */
-/*   Updated: 2025/04/23 10:22:17 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/05 13:00:14 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_isdigit(int n)
+int	ft_isdigit(int n)
 {
-    return (n >= '0' && n <= '9');
+	return (n >= '0' && n <= '9');
 }
