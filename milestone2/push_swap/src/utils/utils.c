@@ -6,7 +6,7 @@
 /*   By: pafuente <pafuente@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 10:23:52 by pafuente          #+#    #+#             */
-/*   Updated: 2025/05/06 10:42:48 by pafuente         ###   ########.fr       */
+/*   Updated: 2025/05/07 10:23:41 by pafuente         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_strncpy(char *dst, const char *src, int n)
 	*dst = '\0';
 }
 
+//The `is_sorted` function checks if a linked
+// list stack is sorted in ascending order.
 bool	is_sorted(t_stack_node *stack)
 {
 	if (!stack)
